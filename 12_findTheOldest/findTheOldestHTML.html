@@ -1,5 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+
+const people = [
+      {
+        name: 'Carly',
+        yearOfBirth: 1942,
+        yearOfDeath: 1970,
+      },
+      {
+        name: 'Ray',
+        yearOfBirth: 1962,
+        yearOfDeath: 2011
+      },
+      {
+        name: 'Jane',
+        yearOfBirth: 1912,
+        yearOfDeath: 1941
+      },
+      {
+        name: 'Montgomery',
+        yearOfBirth: 2000,
+      }      
+];
+
         // passing array of people to function
-const findTheOldest =function(arrayPeople) {
+        const findTheOldest =function(arrayPeople) {
 // reduce will return one value after iterating through all items in array
     return arrayPeople.reduce((oldestPers,currPers) => { 
         // oldestPers and currPers do not have any initial value here, oldestPers will by default be the oldest
@@ -19,7 +50,13 @@ const getAge = function(yearOfBirth, yearOfDeath) {
     // calculate age - death year - birth year
     return yearOfDeath-yearOfBirth;
 }
-                              
 
-// Do not edit below this line
-module.exports = findTheOldest;
+console.log(findTheOldest(people).name);
+
+</script>
+
+</head>
+<body>
+<p>TEST</p>    
+</body>
+</html>

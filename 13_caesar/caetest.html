@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+function caesar(string, num) {
+    // array will contain "encrypted" cipher characters
+    let arr = [];
+    // loop through characters in string
+    for(let i=0;i<string.length;i++) {
+        // check for any non-alpha chacters
+        if(!(/[a-zA-Z]/.test(string[i]))){
+            // if a punctuation, whitespace or other non-alphabetic character, add as is (keep space, punctuatation etc)
+            arr[i]=string[i];
+            // continue through for loop 
+            continue;
+        }
+        // get the character code of the character and add the "num" parameter passed to the function
+        let n = string.charCodeAt(i) + num;
+
+        // character codes for alphabet:
+        // Capital letters 65-90
+        // lowercase letters 97-122
+        
+        if (string[i] == string[i].toLowerCase()) {
+            if(n>122)  {
+                while(n>122){
+                    n-=26;
+                }
+            } else {
+                while(n<97){
+                    n+=26;
+                }
+            }
+        } else {
+            if(n>90) {
+                while(n>90){
+                    n-=26;
+                }
+            } else {
+                while(n<65){
+                n+=26;
+                }
+            }
+        }
+    arr[i]=String.fromCharCode(n);    
+    }
+console.log(arr.join(''));
+return arr.join('');
+};
+console.log(caesar("Hello, World", 500));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
